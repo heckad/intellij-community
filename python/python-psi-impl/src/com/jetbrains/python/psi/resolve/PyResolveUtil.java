@@ -360,7 +360,7 @@ public final class PyResolveUtil {
    */
   public static boolean allowForwardReferences(@NotNull PyQualifiedExpression element) {
     // Allow forward references in Pyi annotations
-    if (PyiUtil.isInsideStubAnnotation(element)) {
+    if (PyiUtil.isInsideStubAnnotation(element) || PyiUtil.isInsideStub(element)) {
       return true;
     }
     // Forward references are allowed in annotations according to PEP 563
